@@ -25,6 +25,9 @@ public class AdventureViewModel extends ViewModel {
         livesLiveData.setValue(String.valueOf(vides));
         PreferencesProvider.providePreferences().edit().putInt("lives", vides).commit();
     }
+    public int getVidesInt(){
+        return Integer.valueOf(livesLiveData.getValue());
+    }
     public MutableLiveData<String> getLives() {
         return livesLiveData;
     }

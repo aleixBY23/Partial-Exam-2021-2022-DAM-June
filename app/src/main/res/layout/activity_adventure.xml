@@ -6,6 +6,8 @@
 
     <data>
         <import type="android.view.View" />
+        <import type="dam.gtidic.examenfinal2122.utils.PreferencesProvider" />
+
         <variable
             name="viewModel"
             type="dam.gtidic.examenfinal2122.usecases.adventure.AdventureViewModel" />
@@ -24,6 +26,7 @@
             android:layout_marginStart="60dp"
             android:layout_marginBottom="32dp"
             android:backgroundTint="#8BC34A"
+            android:enabled='@{viewModel.getVidesInt() > 0 &amp;&amp; PreferencesProvider.providePreferences().getInt("current_level", 0) != 5}'
             android:onClick="showMathAdventure"
             android:text="@string/_1"
             android:textColor="#37474F"

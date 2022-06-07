@@ -9,6 +9,7 @@ import java.util.Objects;
 
 import dam.gtidic.examenfinal2122.usecases.game.GameViewModel;
 import dam.gtidic.examenfinal2122.usecases.models.MathExprLevel;
+import dam.gtidic.examenfinal2122.utils.PreferencesProvider;
 
 public class MathLevelViewModel extends GameViewModel {
 
@@ -34,6 +35,11 @@ public class MathLevelViewModel extends GameViewModel {
 
             } else {
                 Log.d(TAG, "Level not passed...");
+                int vides = PreferencesProvider.providePreferences().getInt("lives", 0);
+                if (vides > 0) {
+                    vides--;
+                }
+                PreferencesProvider.providePreferences().edit().putInt("lives", vides).commit();
                 isValid.postValue(false);
             }
         }

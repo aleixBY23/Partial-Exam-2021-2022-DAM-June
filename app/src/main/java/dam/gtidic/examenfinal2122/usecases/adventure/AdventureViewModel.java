@@ -10,6 +10,6 @@ import java.util.List;
 
 import dam.gtidic.examenfinal2122.utils.PreferencesProvider;
 
-public class AdventureViewModel  {
+public class AdventureViewModel extends ViewModel {
 
 }

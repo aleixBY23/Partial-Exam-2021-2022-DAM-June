@@ -26,6 +26,7 @@ public class LauncherActivity extends AppCompatActivity {
         Log.d(this.getClass().getSimpleName(), " -> setup()");
         Log.d(this.getClass().getSimpleName(), " ... init Shared Preferences()");
         PreferencesProvider.init(this);
+
     }
 
     private void data(){

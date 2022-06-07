@@ -63,7 +63,7 @@
             android:id="@+id/livesTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/qa_vides"
+            android:text="@={viewModel.lives}"
             android:textAlignment="center"
             android:textColor="#5D4037"
             android:textSize="14sp"
@@ -102,12 +102,13 @@
             android:layout_marginTop="112dp"
             android:background="#9AC5CA"
             android:contentDescription="@string/app_name"
+            android:onClick="@{() -> viewModel.purchaseALive()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/btn_star"
             app:tint="#F89F00"
             tools:ignore="ImageContrastCheck" />
-        <!--- QA: android:onClick="purchaseALive"-->
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

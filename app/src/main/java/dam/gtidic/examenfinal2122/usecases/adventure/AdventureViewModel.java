@@ -12,4 +12,24 @@ import dam.gtidic.examenfinal2122.utils.PreferencesProvider;
 
 public class AdventureViewModel extends ViewModel {
 
+    public MutableLiveData<String> livesLiveData;
+    int vides;
+
+    public AdventureViewModel() {
+        this.livesLiveData = new MutableLiveData<>(String.valueOf(PreferencesProvider.providePreferences().getInt("lives", 0)));
+        this.vides = PreferencesProvider.providePreferences().getInt("lives", 0);
+    }
+
+    public void purchaseALive(){
+        vides++;
+        livesLiveData.setValue(String.valueOf(vides));
+        PreferencesProvider.providePreferences().edit().putInt("lives", vides).commit();
+    }
+    public MutableLiveData<String> getLives() {
+        return livesLiveData;
+    }
+
+    public void setLives(MutableLiveData<String> livesLiveData) {
+        this.livesLiveData = livesLiveData;
+    }
 }
